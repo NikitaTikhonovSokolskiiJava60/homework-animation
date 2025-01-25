@@ -1,0 +1,80 @@
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-circle {
+    width: 200px;
+    height: 200px;
+    background-color: gold;
+    border-radius: 100px;
+    position: relative;
+    margin-bottom: 200px;
+}
+
+.orbit-circle {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    border-radius: 50px;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    transform: translate(-50%, 0);
+    animation: orbit 7s linear infinite ;
+}
+
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg) translateX(200px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(200px) rotate(-360deg);
+    }
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-3px); }
+    50% { transform: translateX(3px); }
+    75% { transform: translateX(-3px); }
+    100% { transform: translateX(0); }
+}
+
+button:hover {
+    animation: shake 0.3s ease-in-out;
+}
+.buttons {
+    display: flex;
+    align-items:center;
+    gap: 10px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease-in, color 0.3s;
+}
+
+button:hover {
+    background-color: gold;
+    color: black;
+}
+
+.button-start{
+    background-color: lightgreen;
+}
+
+
+.button-stop{
+    background-color: orange;
+}
